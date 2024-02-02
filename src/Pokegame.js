@@ -2,6 +2,7 @@ import React from "react";
 import shuffleArray from "./PokeDivide";
 import Pokecard from "./Pokecard";
 import Pokedex from "./Pokedex";
+import "./Pokegame.css";
 
 let handOne = [];
 let handTwo = [];
@@ -18,9 +19,11 @@ function Pokegame(props) {
       <h2 className="PokeGame-1PHeader">Player 1's Hand:</h2>
       <Pokedex pokemon={handOne} />
       <b>Exp Total: {p1Total}</b>
+      <h3 className={p1Total > p2Total ? "winner" : "loser"}>YOU WIN!</h3>
       <h2 className="PokeGame-2PHeader">Player 2's Hand:</h2>
       <Pokedex pokemon={handTwo} />
       <b>Exp Total: {p2Total}</b>
+      <h3 className={p2Total > p1Total ? "winner" : "loser"}>YOU WIN!</h3>
     </div>
   );
 }
